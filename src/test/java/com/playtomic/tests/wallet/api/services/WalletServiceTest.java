@@ -27,7 +27,7 @@ public class WalletServiceTest {
 	@Test
 	public void getWalletById_ok() throws WalletServiceException {
 		Wallet wallet = new Wallet();
-		wallet.setId(1);
+		wallet.setId(1L);
 		wallet.setAmount(new BigDecimal("10.00"));
 
 		Mockito.when(walletRepository.findById(wallet.getId())).thenReturn(Optional.of(wallet));
