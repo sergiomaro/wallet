@@ -25,4 +25,8 @@ public class Wallet {
 	@NotNull(message = "Amount is mandatory")
 	private BigDecimal amount;
 
+	public void addAmount(BigDecimal addMoney) {
+		this.amount = this.amount.add(addMoney);
+	}
+
 }
