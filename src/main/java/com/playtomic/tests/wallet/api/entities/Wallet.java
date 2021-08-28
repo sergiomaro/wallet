@@ -20,7 +20,7 @@ public class Wallet {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private Long id;
 
 	@NotNull(message = "Amount is mandatory")
 	private BigDecimal amount;
