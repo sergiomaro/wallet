@@ -59,4 +59,17 @@ public class WalletService {
 		return walletRepository.save(wallet);
 	}
 
+	public Wallet subtractMoneyFromWallet(long id, @Valid MoneyTransaction subtractMoney)
+			throws WalletServiceException {
+		Wallet wallet = this.getWalletById(id);
+
+		if (subtractMoney.getAmount().compareTo(wallet.getAmount()) == 1) {
+			throw new WalletServiceException("Wallet not have enough money");
+		}
+
+		wallet.subtractAmount(subtractMoney.getAmount());
+
+		return walletRepository.save(wallet);
+	}
+
 }

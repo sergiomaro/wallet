@@ -46,6 +46,12 @@ public class WalletController {
 		return walletService.addMoneyToWallet(id, addMoney);
 	}
 
+	@PostMapping("/{id}/subtract-money")
+	Wallet subtractMoneyFromWallet(@PathVariable("id") long id, @Valid @RequestBody MoneyTransaction subtractMoney)
+			throws WalletServiceException {
+		return walletService.subtractMoneyFromWallet(id, subtractMoney);
+	}
+
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(WalletServiceException.class)
 	public String handleValidationExceptions(WalletServiceException ex) {

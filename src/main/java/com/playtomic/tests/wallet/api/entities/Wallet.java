@@ -29,4 +29,8 @@ public class Wallet {
 		this.amount = this.amount.add(addMoney);
 	}
 
+	public void subtractAmount(BigDecimal subtractMoney) {
+		this.amount = this.amount.subtract(subtractMoney);
+	}
+
 }
